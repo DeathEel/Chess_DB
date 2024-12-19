@@ -1,8 +1,10 @@
 # Files used by project
-input/
+input/*.pgn
 
 # Files produced by project
-output/
+output/csv/*.csv
+output/logs/*.txt
+output/plots/*.png
 
 # Environment
 .env
