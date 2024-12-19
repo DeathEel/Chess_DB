@@ -61,7 +61,7 @@ def execute_query(selected_query):
         case 5:
             get_peak_elo()
         case 6:
-            respond(f"The scatter plot is being shown. It is also saved as \"/output/plots/scatter_elo_result.png\".", 0)
+            respond(f"The scatter plot is being shown. It is also saved as \"output/plots/scatter_elo_result.png\".", 0)
             respond(f"The colors represent the results of the game:", 1)
             respond(f"Forest Green:\t1-0\t\t(White win)", 1)
             respond(f"Orange Red:\t\t0-1\t\t(Black win)", 1)
@@ -70,7 +70,7 @@ def execute_query(selected_query):
             generate_scatter_plot()
         case 7:
             date = str(input("[INPUT] Please input a date in \"YYYY.MM.DD\" format: "))
-            respond(f"The date plot is being shown. It is also saved as \"/output/plots/linear_regression_predict_elo.png\".", 0)
+            respond(f"The date plot is being shown. It is also saved as \"output/plots/linear_regression_predict_elo.png\".", 0)
             respond(f"The line represents the linear regression line. It is being used to predict the elo at the inputted date.", 1)
             respond(f"To continue, close the plot window.", 0)
             predict_elo(date)
@@ -427,7 +427,7 @@ def most_frequent(List):
     return max(set(List), key=List.count)
 
 def predict_result(white_elo, black_elo, step_size):
-    chess_data = pd.read_csv("chess.csv")
+    chess_data = pd.read_csv("output/csv/chess.csv")
     results_enumerated = {"1-0": 0, "0-1": 1, "1/2-1/2": 2}
 
     # Create model and find information

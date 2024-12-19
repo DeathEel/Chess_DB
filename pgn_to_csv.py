@@ -7,15 +7,15 @@ game_id = 0
 # Adds all .pgn files into a .csv database
 def pgn_to_csv():
     # Write header row
-    db = open("output/chess.csv", "w", newline='')
+    db = open("output/csv/chess.csv", "w", newline='')
     header_row = ("GameID", "Date", "White" , "Black", "Result", "WhiteElo", "BlackElo", "PGN")
     writer = csv.writer(db)
     writer.writerow(header_row)
 
     # Read every .pgn file in directory
-    for file in os.listdir("/input"):
+    for file in os.listdir("input"):
         if file.endswith(".pgn"):
-            f = open(file, "r")
+            f = open(os.path.join("input", file), "r")
             games = clean_games(f.read()) # clean the file into separate games
             f.close()
 
