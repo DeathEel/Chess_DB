@@ -1,0 +1,8 @@
+# Files used by project
+input/
+
+# Files produced by project
+output/
+
+# Environment
+.env
